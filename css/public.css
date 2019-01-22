@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS base */
+html { color:#000;background: #000;} body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin:0; padding:0; } body{ font: 12px/1.5 Microsoft YaHei,Arial,sans-serif; color:#000; } h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal; } section, header, article, time, nav, footer, figure, figcaption { display:block; margin:0; padding:0; } input:focus, a:focus { outline:none; }  fieldset, img { border:0; } address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal; } ol, ul { list-style:none; } caption, th { text-align:left; } h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal; } q:before, q:after { content:''; } abbr, acronym { border:0; font-variant:normal; } sup { vertical-align:text-top; } sub { vertical-align:text-bottom; } button, input, textarea, select { font-family:Microsoft YaHei,Arial,sans-serif; font-size:inherit; font-weight:inherit; line-height:1.5; vertical-align:middle; } button, input, textarea, select { *font-size:100%; } textarea { resize:none; } legend { color:#000; } a{ vertical-align:baseline; } a{  text-decoration:none; } a:hover{text-decoration:none;}
+input[type="button"],input[type="submit"],input[type="text"],input[type="tel"],textarea{-webkit-appearance:none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+a{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+html,body{width:100%; height:100%;overflow: hidden;}
+#wrapper{position:relative;width:100%;min-width: 320px;height:100%;min-height:415px;margin:0 auto;overflow: hidden;}
+#wrapper:before{content: "";display: table;}
+/*musicBtn GO*/
+.musicBtn{z-index:2000;width:0.55rem;height:0.55rem;position: absolute;right:0.15rem;top:0.15rem;display: none;}
+.musicBtn div{position: absolute;width:86%;height:86%;left:7%;top:7%;background: url(../img/music_icon.png) no-repeat center center;background-size:contain;}
+.musicPlay div{-webkit-animation: music 5s linear 0s infinite;}
+@-webkit-keyframes music{
+ 0%{-webkit-transform:rotate(0deg);}
+ 100%{-webkit-transform:rotate(359deg);}
+}
+/*musicBtn END*/
+
+/*loading*/
+.loading{position: absolute;width:100%;height:100%;left:0;top:0;background:rgba(0,0,0,0.3);z-index: 3000;display: none;}
+.loading div{width:1.8rem;height:1.8rem;position: absolute;left:50%;top:50%;margin:-0.9rem 0 0 -0.9rem;background: url(../img/loading.png) no-repeat center center;background-size: contain;
+	-webkit-animation: rotate 2s linear 0s infinite;
+}
+/*page style*/
+.popup{position: absolute;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index: 2500;display: none;}
+.hint{position:fixed;left:15%;top:50%;width:70%;background: rgba(0,0,0,0.6);margin-top:-30px;z-index: 5000;text-align: center;padding:5px 10px;color:#fff;font-size: 0.28rem;box-sizing: border-box;-webkit-user-select: none;pointer-events:none;display: none;border-radius:0.05rem;}
+.full{position: absolute;left:0;top:0;width:100%;height:100%;}
+.img{position: absolute;left:0;top:0;width:100%;}
+.yCenter{position: absolute;left:0;top:50%;width:100%;height:10.4rem;margin-top: -5.2rem;}
+.disabled{pointer-events:none;}
+.page{position: absolute;left:0;top:0;width:100%;height:100%;overflow: hidden;display: none;
+	-webkit-animation: moveIn 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0s both;
+}
+/*game*/
+#xCanvas{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);width:100%;}
+/*moveIn moveOut animate*/
+.moveIn{-webkit-animation: moveIn 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0s both;}
+.moveOut{
+  pointer-events:none;
+  -webkit-animation: moveOut 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0s both;
+}
+@-webkit-keyframes moveIn {
+	from{-webkit-transform:scale(1.2);opacity:0;}
+	to{-webkit-transform:none;opacity:1;}
+}
+@-webkit-keyframes moveOut {
+	from{-webkit-transform:scale(1);opacity:1;}
+ 	to{-webkit-transform:scale(1.2);opacity:0;}
+}
+.fadeIn{-webkit-animation: fadeIn 0.5s ease 0s both;}
+@-webkit-keyframes fadeIn {
+	from{opacity:0;}
+	to{opacity:1;}
+}
+.fadeOut{-webkit-animation: fadeOut 0.5s ease 0s both;}
+@-webkit-keyframes fadeOut {
+	from{opacity:1;}
+	to{opacity:0;}
+}
+@-webkit-keyframes rotate{
+	0%{-webkit-transform:rotate(0deg);}
+	100%{-webkit-transform:rotate(359deg);}
+}
+@-webkit-keyframes scale{
+	0%{-webkit-transform:scale(1);}
+	100%{-webkit-transform:scale(0.94);}
+}
+@-webkit-keyframes init{
+	to{-webkit-transform:none;opacity:1;}
+}
+/*屏幕适配*/
+@media only screen and (min-height: 450px){
+}
